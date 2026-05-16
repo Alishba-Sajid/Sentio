@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:stress_detection_app/features/auth/signup_screen.dart';
+import 'package:stress_detection_app/config/app_theme.dart';
+import 'package:stress_detection_app/features/auth/auth_gate.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,9 +22,9 @@ class StressDetectionApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Stress Detection App',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const SignupScreen(),
+      title: 'Stress Detection',
+      theme: AppTheme.light,
+      home: const AuthGate(),
     );
   }
 }
